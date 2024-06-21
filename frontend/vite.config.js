@@ -6,10 +6,12 @@ export default defineConfig({
   plugins: [react()],
   server:{
    
-    proxy:{
-      "/api":{
-        target:"https://social-media-app-kg5s.onrender.com",
-      }
-    }
+    // proxy:{
+    //   "/api":{
+    //     target:"https://social-media-app-1-5ckp.onrender.com",
+    //     changeOrigin: true,
+    //     rewrite: (path) => path.replace(/^\/api/, '')
+    //   }
+    // }
   }
 })

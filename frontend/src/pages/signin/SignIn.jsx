@@ -37,7 +37,7 @@ const SignIn = () => {
   {/* submit button  */}
   <button type="submit" className={` ${style.button} btn btn-primary mt-3`} disabled={loading}>
   {loading? <span className='spinner-border spinner-border-sm text-light' role="status">
-    <span class="visually-hidden">Loading...</span>
+    <span className="visually-hidden">Loading...</span>
   </span> : "Login"}
     </button>
         </form>

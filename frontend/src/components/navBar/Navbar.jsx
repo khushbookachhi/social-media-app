@@ -31,7 +31,7 @@ const Navbar = () => {
          
           <li className="nav-item dropdown">
             <Link className="nav-link dropdown-toggle fs-5 fw-semibold" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              {authUser.username}
+              {authUser && authUser.username}
             </Link>
             <ul className="dropdown-menu">
               <Logout/>

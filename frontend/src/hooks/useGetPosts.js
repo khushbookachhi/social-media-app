@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 
 import toast from 'react-hot-toast';
+import { baseUrl } from '../api';
 
 const useGetPosts = () => {
     const [loading,setLoading]=useState(false);
@@ -10,7 +11,7 @@ const useGetPosts = () => {
         const getPosts=async()=>{
             setLoading(true);
             try {
-                const res=await fetch(`/api/posts/all`);
+                const res=await fetch(`${baseUrl}/api/posts/all`);
                 const data=await res.json();
                 if(data.error){
                     throw new Error(data.error);
@@ -26,7 +27,7 @@ const useGetPosts = () => {
         const getPostsByUser=async()=>{
             setLoading(true);
             try {
-                const res=await fetch(`/api/posts`);
+                const res=await fetch(`${baseUrl}/api/posts`);
                 const data=await res.json();
                 if(data.error){
                     throw new Error(data.error);

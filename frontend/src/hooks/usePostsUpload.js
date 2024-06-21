@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react'
 import toast from 'react-hot-toast';
+import { baseUrl } from '../api';
 
 
 const usePostsUpload = () => {
@@ -19,7 +20,7 @@ const usePostsUpload = () => {
             Array.from(files).forEach((file,index) => {
             formData.append(`postUrls`, file);
             });
-            const res=await fetch("/api/posts/",{
+            const res=await fetch(`${baseUrl}/api/posts`,{
                 method:"POST",
                 body: formData
             })

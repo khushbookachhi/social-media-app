@@ -13,7 +13,8 @@ import commentRouter from './src/features/comments/comments.routes.js';
 const server=express();
 const port=process.env.PORT;
 var corsOptions = {
-    origin: "*"
+    origin: "*",
+    credentials: true
   }
   server.use(cors(corsOptions));
 server.use(express.json());
