@@ -14,7 +14,7 @@ function App() {
 
   return (
     <>
-    <Navbar/>
+    {authUser && <Navbar/>}
      <Routes>
 				<Route path='/' element={authUser ?<Posts />:<Navigate to="/login"/>} />
 				<Route path='/login' element={authUser?<Navigate to="/"/>:<SignIn />} />
