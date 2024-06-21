@@ -7,7 +7,7 @@ const Logout = () => {
   return (
     <li>{!loading?<Link className="dropdown-item fs-5 fw-semibold" onClick={logout}>Logout</Link>
 :<span className='spinner-border spinner-border-sm text-light' role="status">
-<span class="visually-hidden">Loading...</span>
+<span className="visually-hidden">Loading...</span>
 </span> }</li>
   )
 }

@@ -55,14 +55,14 @@ const PostsUpload = ({setRefresh}) => {
    
   return (
     <>
-    <div class={`modal fade`} id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
-    <div class="modal-dialog modal-lg modal-dialog-centered">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h1 class="modal-title fs-5" id="exampleModalToggleLabel">{authUser.username}</h1>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+    <div className={`modal fade`} id="exampleModalToggle" aria-hidden="true" aria-labelledby="exampleModalToggleLabel" tabindex="-1">
+    <div className="modal-dialog modal-lg modal-dialog-centered">
+      <div className="modal-content">
+        <div className="modal-header">
+          <h1 className="modal-title fs-5" id="exampleModalToggleLabel">{authUser.username}</h1>
+          <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-        <div class="modal-body">
+        <div className="modal-body">
         <div className="mb-1">
        
        {/* input for caption  */}
@@ -70,23 +70,23 @@ const PostsUpload = ({setRefresh}) => {
     value={caption} onChange={((e)=>setCaption(e.target.value))}/>
   </div>
         </div>
-        <div class="modal-footer">
-          <button class="btn btn-primary" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">Add Media</button>
+        <div className="modal-footer">
+          <button className="btn btn-primary" data-bs-target="#exampleModalToggle2" data-bs-toggle="modal">Add Media</button>
         </div>
       </div>
     </div>
   </div>
-  <div class="modal fade" id="exampleModalToggle2" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
-    <div class="modal-dialog modal-lg modal-dialog-centered">
-      <div class="modal-content">
-        <div class="modal-header border border-0">
+  <div className="modal fade" id="exampleModalToggle2" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
+    <div className="modal-dialog modal-lg modal-dialog-centered">
+      <div className="modal-content">
+        <div className="modal-header border border-0">
            
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+          <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-        <div class="modal-body">
-        <div class="input-group mb-3">
+        <div className="modal-body">
+        <div className="input-group mb-3">
     
-    <input type="file" class="form-control" multiple onChange={handleChange} required/>
+    <input type="file" className="form-control" multiple onChange={handleChange} required/>
   </div>
   {/* show preview img  */}
   <div className='d-flex flex-wrap align-items-center'>
@@ -96,22 +96,22 @@ const PostsUpload = ({setRefresh}) => {
           </div>
   
         </div>
-        <div class="modal-footer border border-0">
-          <button class="btn btn-primary" data-bs-target="#exampleModalToggle" data-bs-toggle="modal">Back</button>
-          <button class="btn btn-primary" data-bs-target="#exampleModalToggle3" data-bs-toggle="modal">next</button>
+        <div className="modal-footer border border-0">
+          <button className="btn btn-primary" data-bs-target="#exampleModalToggle" data-bs-toggle="modal">Back</button>
+          <button className="btn btn-primary" data-bs-target="#exampleModalToggle3" data-bs-toggle="modal">next</button>
         </div>
       </div>
     </div>
   </div>
   {/* modal 3  */}
-  <div class={`modal fade`} id="exampleModalToggle3" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
-    <div class="modal-dialog modal-lg modal-dialog-centered">
-      <div class="modal-content">
-        <div class="modal-header border border-0">
-          <h1 class="modal-title fs-5" id="exampleModalToggleLabel2">{authUser.username}</h1>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+  <div className={`modal fade`} id="exampleModalToggle3" aria-hidden="true" aria-labelledby="exampleModalToggleLabel2" tabindex="-1">
+    <div className="modal-dialog modal-lg modal-dialog-centered">
+      <div className="modal-content">
+        <div className="modal-header border border-0">
+          <h1 className="modal-title fs-5" id="exampleModalToggleLabel2">{authUser.username}</h1>
+          <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-        <div class="modal-body d-flex flex-column flex-wrap">
+        <div className="modal-body d-flex flex-column flex-wrap">
           <h5>{caption}</h5>
           {/* show preview img  */}
           <div className='d-flex flex-wrap align-items-center'>
@@ -122,18 +122,18 @@ const PostsUpload = ({setRefresh}) => {
   
   
         </div>
-        <div class="modal-footer border border-0">
-          <button class="btn btn-primary"  onClick={handleSubmit} disabled={loading}
+        <div className="modal-footer border border-0">
+          <button className="btn btn-primary"  onClick={handleSubmit} disabled={loading}
            {...(!loading && { "data-bs-dismiss": "modal", "aria-label": "Close" })}>
           {loading? <span className='spinner-border spinner-border-sm text-light' role="status">
-    <span class="visually-hidden">Loading...</span>
+    <span className="visually-hidden">Loading...</span>
   </span> : "Post"}
             </button>
         </div>
       </div>
     </div>
   </div>
-  <button class={`${style.writemodal} btn bg-body-secondary text-start px-3 fs-5 fw-semibold rounded-pill`} data-bs-target="#exampleModalToggle" data-bs-toggle="modal">Start a post</button>
+  <button className={`${style.writemodal} btn bg-body-secondary text-start px-3 fs-5 fw-semibold rounded-pill`} data-bs-target="#exampleModalToggle" data-bs-toggle="modal">Start a post</button>
   </>
   )
 }
