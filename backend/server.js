@@ -13,7 +13,7 @@ import commentRouter from './src/features/comments/comments.routes.js';
 const server=express();
 const port=process.env.PORT;
 var corsOptions = {
-    origin: "*",
+    origin: "https://social-media-app-testing.netlify.app/",
     credentials: true
   }
   server.use(cors(corsOptions));
