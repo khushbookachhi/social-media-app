@@ -8,7 +8,7 @@ export default defineConfig({
    
     proxy:{
       "/api":{
-        target:"http://localhost:4060",
+        target:"https://social-media-app-kg5s.onrender.com",
       }
     }
   }
