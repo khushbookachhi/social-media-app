@@ -1,5 +1,6 @@
 import '../env.js';
 import express from 'express';
+import cors from 'cors';
 // import mongoose from 'mongoose';
 import { connectUsingMongoose } from './src/config/mongooseConfig.js';
 import userRouter from './src/features/users/users.routes.js';
@@ -11,7 +12,10 @@ import commentRouter from './src/features/comments/comments.routes.js';
 
 const server=express();
 const port=process.env.PORT;
-
+var corsOptions = {
+    origin: "*"
+  }
+  server.use(cors(corsOptions));
 server.use(express.json());
 server.use(cookieParser());
 server.use(express.static('backend/uploads'));
