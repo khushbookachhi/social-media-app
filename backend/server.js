@@ -14,7 +14,7 @@ const port=process.env.PORT;
 
 server.use(express.json());
 server.use(cookieParser());
-server.use(express.static('uploads'));
+server.use(express.static('backend/uploads'));
 
 //for all requests related to user,redirect to user routes
 server.use('/api/users',userRouter);

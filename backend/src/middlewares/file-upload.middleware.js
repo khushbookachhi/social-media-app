@@ -4,16 +4,16 @@ import path from 'path';
 
 const storage=multer.diskStorage({
     destination:(req,file,cb)=>{
-     cb(null, "./uploads/");
+     cb(null, "./backend/uploads");
     },
     filename:(req,file,cb)=>{
         cb(null,new Date().toISOString().replace(/:/g, '_')+file.originalname);
     },
 });
-// only accept image and video files
+// only accept image files
 const fileFilter = (req, file, cb) => {
-    // Accept images and videos only
-    const allowedTypes = /jpeg|jpg|png|gif|mp4|mov|avi|mkv/;
+    // Accept images  only
+    const allowedTypes = /jpeg|jpg|png|gif|webp|svg/;
     const mimeType = allowedTypes.test(file.mimetype);
     const extName = allowedTypes.test(path.extname(file.originalname).toLowerCase());
 

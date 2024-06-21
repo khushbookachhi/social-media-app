@@ -1,0 +1,19 @@
+.signupform{
+    width: 27rem;
+}
+.signupImg{
+    height: 80vh;
+    width: 30vw;
+}
+.signupImg img{
+    width: inherit;
+    height: inherit;
+}
+
+input[type="text"],input[type="email"],input[type="password"]{
+    font-size: 1.1rem !important;
+    width:100% !important;
+}
+.button {
+    width: 22rem;
+}

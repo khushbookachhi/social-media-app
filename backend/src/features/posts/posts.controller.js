@@ -20,7 +20,7 @@ export class PostController{
             return res.status(400).json({ error: 'No files uploaded' });
         }
          // Create an array of file URLs
-         const fileUrls = files.map(file => file.path);
+         const fileUrls = files.map(file => file.filename);
        //called function to add data to db
       const newPost=await this.postRepository.addPost(req.userID,caption,fileUrls);
        res.status(201).json({newPost}); // success and sent newPost to client view
@@ -72,7 +72,7 @@ async getAllByUserId(req,res){
        // Check if there are files uploaded
        if (req.files && req.files.length > 0) {
         // Map through uploaded files and get their filenames
-        postUrls = req.files.map(file => file.path);
+        postUrls = req.files.map(file => file.filename);
     }
               
                //handle operation to update post by post iD

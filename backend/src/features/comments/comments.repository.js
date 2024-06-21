@@ -27,7 +27,7 @@ async get(postID){
     try {
         const comments=await CommentModel.find({
             postID:postID
-        }).lean().populate("userID",'_id name email');
+        }).lean().populate("userID",'_id username email');
         console.log("these are comments",comments);
         return comments;
     } catch (error) {
@@ -39,7 +39,7 @@ async getComment(id){
     try {
         const comment=await CommentModel.findOne({
             _id:id
-        }).lean().populate("userID",'_id name email');
+        }).lean().populate("userID",'_id username email');
         console.log("this is comment",comment);
         return comment;
     } catch (error) {

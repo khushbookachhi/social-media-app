@@ -15,4 +15,4 @@ export const commentSchema=new mongoose.Schema({
     required:true,
     trim:true
     }
-});
+},{timestamps:true});

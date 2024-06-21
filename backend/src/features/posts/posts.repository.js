@@ -30,7 +30,7 @@ export default class PostRepository{
      async getAllPosts(){
         try {
             //finding post and populate with userID selected data
-            const posts=await PostModel.find();
+            const posts=await PostModel.find().lean().populate("userID",'_id username email');
             console.log("these are posts",posts);
             return posts;
         } catch (error) {
@@ -44,7 +44,7 @@ export default class PostRepository{
             //finding post with userID and populate with userID selected data
             const posts=await PostModel.find({
                 userID:userID
-            })
+            }).populate("userID",'_id username email');
             console.log("these are posts",posts);
             return posts;
         } catch (error) {
