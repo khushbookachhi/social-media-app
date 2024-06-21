@@ -62,7 +62,7 @@ export class UserController{
                      res.cookie("jwt",token,{
                         maxAge:4 * 24 * 60 * 60 * 1000, //ms
                         httpOnly:true, // prevent xss attacks cross-site scripting attacks
-                        sameSite:"none", //CSRF attacks cross-site request forgery attacks
+                        // sameSite:"none", //CSRF attacks cross-site request forgery attacks
                         secure: process.env.Node_ENV!== "development"
                     });
                      return res.status(200).json({
