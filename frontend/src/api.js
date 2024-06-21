@@ -1,2 +1,2 @@
-const baseUrl="https://social-media-app-1-5ckp.onrender.com";
+const baseUrl="https://social-media-app-2-lqen.onrender.com";
 export {baseUrl};
