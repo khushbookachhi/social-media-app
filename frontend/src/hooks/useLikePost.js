@@ -1,6 +1,6 @@
-import React, { useState } from 'react'
+import React from 'react'
 import toast from 'react-hot-toast';
-import { baseUrl } from '../api';
+
 
 const useLikePost = () => {
    
@@ -9,7 +9,7 @@ const useLikePost = () => {
     
       
         try {
-            const res=await fetch(`${baseUrl}/api/likes/toggle/${postId}`,{
+            const res=await fetch(`/api/likes/toggle/${postId}`,{
                 method:"POST",
             });
             const data=await res.json();
@@ -25,7 +25,7 @@ const useLikePost = () => {
     const getLikes=async(postId)=>{
         
         try {
-            const res=await fetch(`${baseUrl}/api/likes/${postId}`);
+            const res=await fetch(`/api/likes/${postId}`);
             const data=await res.json();
             if(data.error){
                 throw new Error(data.error);

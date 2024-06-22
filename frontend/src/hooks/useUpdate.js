@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react'
 import toast from 'react-hot-toast';
-import { baseUrl } from '../api';
+
 
 
 const usePostsUpdate = () => {
@@ -22,7 +22,7 @@ const usePostsUpdate = () => {
                     });
             }
             
-            const res=await fetch(`${baseUrl}/api/posts/${postId}`,{
+            const res=await fetch(`/api/posts/${postId}`,{
                 method:"PUT",
                 body: formData
             })

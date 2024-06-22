@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import toast from 'react-hot-toast';
-import { baseUrl } from '../api';
+
 
 const useComment = () => {
   const [loading,setLoading]=useState(false);
@@ -32,7 +32,7 @@ const commentGet=async(postId)=>{
     
     setLoading(true);
     try {
-        const res=await fetch(`${baseUrl}/api/comments/${postId}`);
+        const res=await fetch(`/api/comments/${postId}`);
         const data=await res.json();
         if(data.error){
             throw new Error(data.error);

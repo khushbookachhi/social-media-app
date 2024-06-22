@@ -1,13 +1,13 @@
 import React, { useState } from 'react'
 import toast from 'react-hot-toast';
-import { baseUrl } from '../api';
+
 
 const useDelete = () => {
     const [loading,setLoading]=useState(false);
     const deletePost=async(postID)=>{
         setLoading(true);
         try {
-            const res=await fetch(`${baseUrl}/api/posts/${postID}`,{
+            const res=await fetch(`/api/posts/${postID}`,{
                 method:"DELETE"
             });
             const data=await res.json();

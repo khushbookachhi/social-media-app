@@ -20,7 +20,7 @@ const usePostsUpload = () => {
             Array.from(files).forEach((file,index) => {
             formData.append(`postUrls`, file);
             });
-            const res=await fetch(`${baseUrl}/api/posts`,{
+            const res=await fetch(`/api/posts`,{
                 method:"POST",
                 body: formData
             })
