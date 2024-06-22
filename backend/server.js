@@ -1,6 +1,7 @@
 import '../env.js';
 import express from 'express';
 import cors from 'cors';
+import path from "path";
 // import mongoose from 'mongoose';
 import { connectUsingMongoose } from './src/config/mongooseConfig.js';
 import userRouter from './src/features/users/users.routes.js';
