@@ -10,15 +10,16 @@ import Navbar from './components/navBar/Navbar.jsx';
 import Myposts from './pages/myposts/Myposts.jsx';
 
 function App() {
-  const {authUser}=useAuthContext();
+  const {signedUp,authUser}=useAuthContext();
 
   return (
     <>
     {authUser && <Navbar/>}
      <Routes>
+     <Route path='/signup' element={signedUp?<Navigate to="/login"/>:<SignUp />} />
 				<Route path='/' element={authUser ?<Posts />:<Navigate to="/login"/>} />
 				<Route path='/login' element={authUser?<Navigate to="/"/>:<SignIn />} />
-				<Route path='/signup' element={authUser?<Navigate to="/login"/>:<SignUp />} />
+			
         <Route path='/myPosts' element={authUser?<Myposts/>:<Navigate to="/login"/>} />
 			</Routes>
       <Toaster/>

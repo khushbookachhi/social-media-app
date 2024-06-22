@@ -8,6 +8,7 @@ export const useAuthContext=()=>{
 
 export const AuthContextProvider=({children})=>{
     const storedUser = localStorage.getItem("auth-user");
+   
 console.log("Stored user:", storedUser);
 
 let parsedUser = null;
@@ -18,7 +19,8 @@ if (storedUser) {
 
 console.log("Parsed user:", parsedUser);
     const [authUser,setAuthUser]=useState(parsedUser);
-    return <AuthContext.Provider value={{authUser,setAuthUser}}>
+    const [signedUp,setSignedUp]=useState(false);
+    return <AuthContext.Provider value={{authUser,setAuthUser,signedUp,setSignedUp}}>
      {children}
     </AuthContext.Provider>
 }
