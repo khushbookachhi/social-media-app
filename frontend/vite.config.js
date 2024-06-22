@@ -6,13 +6,10 @@ export default defineConfig({
   plugins: [react()],
   server:{
    
-    proxy:{
-      "/api":{
-        target:"https://social-media-app-4.onrender.com",
-        changeOrigin: true,
-        secure:false,
-        rewrite: (path) => path.replace(/^\/api/, '')
-      }
-    }
+    proxy: {
+			"/api": {
+				target: "http://localhost:4060",
+			},
+		},
   }
 })

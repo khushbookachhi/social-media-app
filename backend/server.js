@@ -12,8 +12,9 @@ import commentRouter from './src/features/comments/comments.routes.js';
 
 const server=express();
 const port=process.env.PORT;
+const __dirname = path.resolve();
 var corsOptions = {
-    origin: "https://hilarious-platypus-2a1078.netlify.app",
+    origin: "*",
     credentials: true
   }
   server.use(cors(corsOptions));
@@ -31,6 +32,11 @@ server.use('/api/likes',likeRouter);
 server.use('/api/comments',commentRouter);
 
 
+app.use(express.static(path.join(__dirname, "/frontend/dist")));
+
+app.get("*", (req, res) => {
+	res.sendFile(path.join(__dirname, "frontend", "dist", "index.html"));
+});
 
 
 
