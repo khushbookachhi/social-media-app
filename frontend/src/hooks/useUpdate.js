@@ -33,7 +33,7 @@ const usePostsUpdate = () => {
         }else{
             toast.success("Post updated successfully !")
             // setTimeout(() => {
-                setGetposts(prev=>!prev)
+                setGetposts(true)
                 setShowModal(false);
             // }, 1000);
            

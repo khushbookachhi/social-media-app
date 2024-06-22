@@ -1,4 +1,6 @@
+
 import React, { useContext, useEffect, useState } from 'react'
+
 import { MdDelete } from "react-icons/md";
 import { FaPen } from "react-icons/fa";
 import { parseISO, formatDistanceToNow } from 'date-fns';
@@ -144,9 +146,9 @@ function handleChange(e) {
   })}
           </div>
       </div>
-      <div classNameclassName="modal-footer border border-0">
-      <button classNameclassName="btn btn-primary" data-bs-target="#exampleModalToggle" data-bs-toggle="modal">Back</button>
-      <button classNameclassName="btn btn-primary" data-bs-target="#exampleModalToggle3" data-bs-toggle="modal">next</button>
+      <div className="modal-footer border border-0">
+      <button className="btn btn-primary" data-bs-target="#exampleModalToggle" data-bs-toggle="modal">Back</button>
+      <button className="btn btn-primary" data-bs-target="#exampleModalToggle3" data-bs-toggle="modal">next</button>
       </div>
     </div>
   </div>
@@ -186,7 +188,7 @@ function handleChange(e) {
  <FaPen  color='white'/> 
   </span>}
   {mypath &&  <span className="position-absolute top-0 start-100 translate-middle py-1 px-2 bg-danger border border-light rounded-circle"
-  onClick={()=>{deletePost(post._id);setGetposts(prev=>!prev)}}>
+  onClick={()=>{deletePost(post._id);setGetposts(true)}}>
     <MdDelete color='white' />
   </span>}
 <div class="card-header bg-white d-flex align-items-center">
@@ -197,7 +199,7 @@ function handleChange(e) {
   <div className="carousel-inner">
     {post && post.postUrls.length>0 && post.postUrls.map((url,index)=>{
         return  <div className="carousel-item active" key={index}>
-        <img src={`https://social-media-app-5.onrender.com/${url}`} className="d-block w-100" alt="..."/>
+        <img src={`${window.location.origin}/${url}`} className="d-block w-100" alt="..."/>
       </div>
     })}
    

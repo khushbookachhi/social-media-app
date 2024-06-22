@@ -9,6 +9,7 @@ import { Toaster } from 'react-hot-toast';
 import Navbar from './components/navBar/Navbar.jsx';
 import Myposts from './pages/myposts/Myposts.jsx';
 
+
 function App() {
   const {signedUp,authUser}=useAuthContext();
 

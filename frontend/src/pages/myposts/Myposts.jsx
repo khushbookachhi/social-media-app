@@ -21,12 +21,12 @@ const Myposts = () => {
                 const postsData = await getPostsByUser();
                
                setUserPosts(postsData.posts)
-            //    setGetposts(false);
+               setGetposts(false);
             } catch (error) {
                 console.error('Error fetching posts:', error);
             }
         };
-       
+        if(getposts)
             fetchPosts();
     }, [getposts]);
   return (
