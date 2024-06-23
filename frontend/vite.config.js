@@ -7,7 +7,7 @@ dotenv.config();
 export default defineConfig({
   plugins: [react()],
   server:{
-   
+   port:3060,
     proxy: {
 			"/api": {
 				target: process.env.server_URL,

@@ -199,7 +199,7 @@ function handleChange(e) {
   <div className="carousel-inner">
     {post && post.postUrls.length>0 && post.postUrls.map((url,index)=>{
         return  <div className="carousel-item active" key={index}>
-        <img src={`${window.location.origin}/${url}`} className="d-block w-100" alt="..."/>
+        <img src={`http://localhost:4060/${url}`} className="d-block w-100" alt="..."/>
       </div>
     })}
    
